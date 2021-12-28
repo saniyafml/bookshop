@@ -272,22 +272,24 @@
 			<div class="card-group">
 				<?
 				include 'query.php';
-				foreach($arr as $value){
-					echo '<div class="card">';
-						echo '<div class="card-img-block">';
-							echo '<a href="#" class="card-img-link"><img src="'.$value['image'].'" class="card-img" alt="..."></a>';
-						echo '</div>';
-						echo '<div class="card-body">';
-							echo '<div class="card-text">';
-								echo '<div class=book-info>' . $value['book'] . '</div>';
-								echo '<div class=author>' . $value['author'] . '</div>';
+				if($arr){
+					foreach($arr as $value){
+						echo '<div class="card">';
+							echo '<div class="card-img-block">';
+								echo '<a href="#" class="card-img-link"><img src="'.$value['image'].'" class="card-img" alt="..."></a>';
 							echo '</div>';
-							echo '<div class="card-text">';
-								echo '<div>' . $value['price'] . '</div>';
-								echo '<button type="button" class="btn btn-primary">Купить</button>';
+							echo '<div class="card-body">';
+								echo '<div class="card-text">';
+									echo '<div class=book-info>' . $value['book'] . '</div>';
+									echo '<div class=author>' . $value['author'] . '</div>';
+								echo '</div>';
+								echo '<div class="card-text">';
+									echo '<div>' . $value['price'] . '</div>';
+									echo '<button type="button" class="btn btn-primary">Купить</button>';
+								echo '</div>';
 							echo '</div>';
 						echo '</div>';
-					echo '</div>';
+					}
 				}
 				?>	
 			</div>
